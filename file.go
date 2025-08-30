@@ -12,7 +12,7 @@ func CreateFile(name string, message string) error {
 		return err
 	}
 	defer file.Close()
-	file.WriteString(message)
+	file.WriteString(message + "\n")
 
 	return nil
 }
@@ -46,7 +46,7 @@ func AddMessage(name string, message string) error {
 	}
 	defer file.Close()
 
-	file.WriteString(message)
+	file.WriteString(message + "\n")
 
 	return nil
 }
