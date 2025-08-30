@@ -2,6 +2,7 @@ package go_file_manipulation
 
 import (
 	"bufio"
+	"fmt"
 	"io"
 	"os"
 )
@@ -35,6 +36,11 @@ func ReadFile(name string) (string, error) {
 
 		message += string(line) + "\n"
 	}
+
+	var log string = "All line has been read"
+	defer func() {
+		fmt.Println(log)
+	}()
 
 	return message, nil
 }
